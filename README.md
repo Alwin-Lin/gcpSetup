@@ -9,11 +9,6 @@
    ```
    sudo apt-get install python
    ```
-   - Check Python version
-   
-   ```
-   which python
-   ```
    - Insall libncurses 
    
    ``` 
