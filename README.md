@@ -12,8 +12,7 @@
 ## Setting up build enviroment
 1. [Setup environment](https://source.android.com/setup/build/initializing)
    - [Install required packages](https://source.android.com/setup/build/initializing#installing-required-packages-ubuntu-1804)
-2. [Get Repo for source control](https://source.android.com/setup/develop)
-   - Python and libncurses are needed on VM
+2. Python, libncurses and repo
    - Install Python 2.7
    
    ```
@@ -23,6 +22,11 @@
    
    ``` 
    sudo apt-get install libncurses5
+   ```
+   - Install repo
+   - 
+   ```
+   sudo apt-get install repo
    ```
 
 3. [Download from Android source tree](https://source.android.com/setup/build/downloading)
