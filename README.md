@@ -24,7 +24,7 @@
    sudo apt-get install libncurses5
    ```
    - Install repo
-   - 
+
    ```
    sudo apt-get install repo
    ```
