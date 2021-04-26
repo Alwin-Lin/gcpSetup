@@ -4,7 +4,8 @@
 - Go to https://console.cloud.google.com/compute/instances
 - On the top, click on Create instance
 - Select N1 for series, and n1-standard-4 for machine type 
-- Scroll down to Boot Disk session and click on Change, change the disk size from 10 to at least 400 and hit select(250G for Android source, 150 to build)
+- Scroll down to Boot Disk session and click on Change, change the disk size from 10 to at least 400 and hit select
+   - 250Gb for Android source, 150Gb to build
 - At Firewall, check both boxes then hit Create.
 - To launch VM, click on SSH and it would pop up
 
