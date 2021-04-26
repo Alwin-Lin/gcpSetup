@@ -21,13 +21,13 @@
    ```
 
 3. [Download from Android source tree](https://source.android.com/setup/build/downloading)
+
    - Config Git enviroemnt
    ``` 
    git config --global user.name "Your Name
    git config --global user.email "you@example.com 
    ```
-   
-  - Downliad source
+   - Downliad source
    ```
    mkdir -p $HOME/ws/android
    cd $HOME/ws/android
