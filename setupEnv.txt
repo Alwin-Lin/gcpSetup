@@ -8,3 +8,6 @@ mkdir -p $HOME/ws/android
 cd $HOME/ws/android
 repo init -u https://android.googlesource.com/platform/manifest
 repo sync -j8
+
+sudo apt update
+sudo apt install default-jre
