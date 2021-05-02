@@ -28,13 +28,20 @@
    ```
    sudo apt-get install repo
    ```
+   
+   -  Install Java 
+   ```
+   sudo apt update
+   sudo apt install default-jre
+   ```
+
 
 3. [Download from Android source tree](https://source.android.com/setup/build/downloading)
 
    - Config Git enviroemnt
    ``` 
-   git config --global user.name "Your Name
-   git config --global user.email "you@example.com 
+   git config --global user.name "Your Name"
+   git config --global user.email "you@example.com" 
    ```
    - Downliad source
    ```
