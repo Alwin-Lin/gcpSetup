@@ -12,6 +12,7 @@
 ### With script
 ``` 
 gcloud compute disks create disk1 --image-project debian-cloud --image-family debian-9 --size 100 --zone us-central1-b
+```
 
 ## Setting up build enviroment
 1. [Setup environment](https://source.android.com/setup/build/initializing)
