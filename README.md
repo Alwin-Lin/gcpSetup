@@ -1,6 +1,7 @@
 # gcpSetup
 
 ## Create a Linux VM as a build machine:
+### With UI
 - Go to https://console.cloud.google.com/compute/instances
 - On the top, click on Create instance
 - Select N1 for series, and n1-standard-4 for machine type 
@@ -8,6 +9,9 @@
    - 250Gb for Android source, 150Gb to build
 - At Firewall, check both boxes then hit Create.
 - To launch VM, click on SSH and it would pop up
+### With script
+``` 
+gcloud compute disks create disk1 --image-project debian-cloud --image-family debian-9 --size 100 --zone us-central1-b
 
 ## Setting up build enviroment
 1. [Setup environment](https://source.android.com/setup/build/initializing)
