@@ -11,7 +11,9 @@
 - To launch VM, click on SSH and it would pop up
 ### With script
 ``` 
-gcloud compute disks create disk1 --image-project debian-cloud --image-family debian-9 --size 100 --zone us-central1-b
+gcloud compute instances create VM_NAME \
+    --image-project IMAGE_PROJECT \
+    [--image IMAGE | --image-family IMAGE_FAMILY]
 ```
 
 ## Setting up build enviroment
