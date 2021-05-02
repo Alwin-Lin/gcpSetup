@@ -11,9 +11,9 @@
 - To launch VM, click on SSH and it would pop up
 ### With script
 ``` 
-gcloud compute instances create VM_NAME \
-    --image-project IMAGE_PROJECT \
-    [--image IMAGE | --image-family IMAGE_FAMILY]
+gcloud compute instances create <VM_NAME> \
+    --image-project <IMAGE_PROJECT> \
+    [--image <IMAGE> | --image-family <IMAGE_FAMILY>]
 ```
 
 ## Setting up build enviroment
