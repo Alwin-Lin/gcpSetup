@@ -16,7 +16,10 @@ gcloud compute disks create disk1 --image-project debian-cloud --image-family de
 
 ## Setting up build enviroment
 1. [Setup environment](https://source.android.com/setup/build/initializing)
-   - [Install required packages](https://source.android.com/setup/build/initializing#installing-required-packages-ubuntu-1804)
+   - For Ubuntu 18.04
+   ```
+   sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
+   ```
 2. Python, libncurses and repo
    - Install Python 2.7
    
