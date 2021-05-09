@@ -1,7 +1,7 @@
 # gcpSetup
 This page will walk you through from creating a VM instance to launching an Android emulator manually.
 
-Alternativly, follow the Set up with pre-built image if you wish to skip customization
+Alternativly, use the pre-built image if you wish to skip customization
 
 ## Set up with pre-built image
 - Before running the createVMwithImg file, remember to change the <VM_NAME>
