@@ -9,14 +9,17 @@
    - 250Gb for Android source, 150Gb to build
 - At Firewall, check both boxes then hit Create.
 - To launch VM, click on SSH and it would pop up
-### With script
+### Creating a vm directly from images
+Note:
+- If you chose to create one from image, skip the next section and go directly to Running the build, everything will be set up
+- Before running the createVMwithImg file, remember to change the <VM_NAME>
 ``` 
 gcloud compute instances create <VM_NAME> \
-    --image-project <IMAGE_PROJECT> \
-    [--image <IMAGE> | --image-family <IMAGE_FAMILY>]
+    --image-project gcpsample-311822 \
+    --image aosp-env
 ```
 
-## Setting up build enviroment
+## Setting up build enviroment and downloading source
 1. [Setup environment](https://source.android.com/setup/build/initializing)
    - For Ubuntu 18.04
    ```
@@ -60,3 +63,17 @@ gcloud compute instances create <VM_NAME> \
    repo init -u https://android.googlesource.com/platform/manifest
    repo sync
    ```
+4. Building Android
+   - Run setup script
+   ```
+   source build/envsetup.sh
+   ```
+   - Build target
+   ```
+   lunch <TARGET_VARIANT>
+   ```
+## Running the build with emulator
+The emulator was added in to your path by build process, to run: 
+``` 
+emulator
+```
