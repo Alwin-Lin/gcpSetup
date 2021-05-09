@@ -11,7 +11,8 @@
 - To launch VM, click on SSH and it would pop up
 ### Creating a vm directly from images
 Note:
-- If you chose to create one from image, skip the next section and go directly to Running the build, everything will be set up
+- If you chose to create one from image, skip the next section and go directly to [Running the build](emulator
+), everything will be set up
 - Before running the createVMwithImg file, remember to change the <VM_NAME>
 ``` 
 gcloud compute instances create <VM_NAME> \
