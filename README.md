@@ -77,9 +77,11 @@ gcloud compute instances create <VM_NAME> \
    ```
    - Build target
    ```
-   lunch <TARGET_VARIANT>
+   lunch <TARGET_VARIANT> \
+   
+   m -j
    ```
-   Note: This process can take around 2~3 hours to finish depending on the computing power
+   Note: This process can take around 3~5 hours to finish depending on the computing power
 
 ## Running the build with emulator
 The emulator was added in to your path by build process, to run: 
