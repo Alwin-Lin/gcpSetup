@@ -89,4 +89,9 @@ emulator
 ```
 
 ## Setting up remote desktop on Windows 10
-- [WIP](https://cloud.google.com/architecture/chrome-desktop-remote-windows-compute-engine#cloud-shell)
+- What does this do?
+    - Allows you to accsess cloud machine on your local machine
+- How much does it cost?
+    - Varies depending on the machine you use, visit the [Pricing Calculator](https://cloud.google.com/products/calculator#id=6bfdb97f-013e-480a-b02a-a9192be6ce09) for an estimate
+- How do I do it?
+    - (https://cloud.google.com/architecture/chrome-desktop-remote-windows-compute-engine#cloud-shell)
