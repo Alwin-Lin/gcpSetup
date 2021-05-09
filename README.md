@@ -103,4 +103,5 @@ emulator
     sudo dpkg --install chrome-remote-desktop_current_amd64.deb \
     sudo apt install --assume-yes --fix-broken
     ``` 
-    -  Follow the rest of the instructions [here](https://cloud.google.com/architecture/chrome-desktop-remote-on-compute-engine#configuring_and_starting_the_chrome_remote_desktop_service)
+- How do I start it?
+    - Follow the instructions for [Configuring and starting the Chrome Remote Desktop service](https://cloud.google.com/architecture/chrome-desktop-remote-on-compute-engine#configuring_and_starting_the_chrome_remote_desktop_service)
