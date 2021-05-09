@@ -11,7 +11,7 @@
 - To launch VM, click on SSH and it would pop up
 ### Creating a vm directly from images
 Note:
-- If you chose to create one from image, skip the next section and go directly to [Running the build](emulator
+- If you chose to create one from image, skip the next section and go directly to [Running the build](https://github.com/Alwin-Lin/gcpSetup/blob/master/README.md#running-the-build-with-emulator
 ), everything will be set up
 - Before running the createVMwithImg file, remember to change the <VM_NAME>
 ``` 
