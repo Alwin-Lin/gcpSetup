@@ -1,7 +1,22 @@
 # gcpSetup
+This page will walk you through from creating a VM instance to launching an Android emulator manually.
 
-## Create a Linux VM as a build machine:
-### With UI
+Alternativly, follow the Set up with pre-built image if you wish to skip customization
+
+## Set up with pre-built image
+- Before running the createVMwithImg file, remember to change the <VM_NAME>
+- If you chose to create one from image, skip the next section and go directly to [Running the build](https://github.com/Alwin-Lin/gcpSetup/blob/master/README.md#running-the-build-with-emulator
+), everything will be set up
+
+Run createVMwithImg, or paste the following into cloud shell
+``` 
+gcloud compute instances create <VM_NAME> \
+    --image-project gcpsample-311822 \
+    --image aosp-env
+```
+
+## Manualy create a Linux VM and build:
+### Creating the VM
 - Go to https://console.cloud.google.com/compute/instances
 - On the top, click on Create instance
 - Select N1 for series, and n1-standard-4 for machine type 
@@ -9,20 +24,8 @@
    - 250Gb for Android source, 150Gb to build
 - At Firewall, check both boxes then hit Create.
 - To launch VM, click on SSH and it would pop up
-### With script
-Run createVMwithImg, or: 
-``` 
-gcloud compute instances create <VM_NAME> \
-    --image-project gcpsample-311822 \
-    --image aosp-env
-```
 
-Note:
-- If you chose to create one from image, skip the next section and go directly to [Running the build](https://github.com/Alwin-Lin/gcpSetup/blob/master/README.md#running-the-build-with-emulator
-), everything will be set up
-- Before running the createVMwithImg file, remember to change the <VM_NAME>
-
-## Setting up build enviroment and downloading source
+### Setting up build enviroment and downloading source
 
 1. [Setup environment](https://source.android.com/setup/build/initializing)
    - For Ubuntu 18.04
