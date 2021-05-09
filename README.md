@@ -87,3 +87,6 @@ The emulator was added in to your path by build process, to run:
 ``` 
 emulator
 ```
+
+## Setting up remote desktop on Windows 10
+- [WIP](https://cloud.google.com/architecture/chrome-desktop-remote-windows-compute-engine#cloud-shell)
