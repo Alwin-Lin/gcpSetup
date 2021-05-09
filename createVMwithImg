@@ -1,0 +1,3 @@
+gcloud compute instances create <VM_NAME> \
+    --image-project gcpsample-311822 \
+    --image aosp-env
