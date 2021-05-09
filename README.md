@@ -95,4 +95,12 @@ emulator
 - How much does it cost?
     - Varies depending on the machine you use, visit the [Pricing Calculator](https://cloud.google.com/products/calculator#id=6bfdb97f-013e-480a-b02a-a9192be6ce09) for an estimate
 - How do I do it?
-    - (https://cloud.google.com/architecture/chrome-desktop-remote-windows-compute-engine#cloud-shell)
+    - install wget and chrome desktop for Debian
+    ``` 
+    sudo apt update \
+    sudo apt-get install --assume-yes wget \
+    wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb \
+    sudo dpkg --install chrome-remote-desktop_current_amd64.deb \
+    sudo apt install --assume-yes --fix-broken
+    ``` 
+    -  Follow the rest of the instructions [here](https://cloud.google.com/architecture/chrome-desktop-remote-on-compute-engine#configuring_and_starting_the_chrome_remote_desktop_service)
