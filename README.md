@@ -1,9 +1,14 @@
-# gcpSetup
-This page will walk you through from creating a VM instance to launching an Android emulator manually.
+# Table of content 
+ - Android cloud build
+    - Create VM with exsisting image
+    - Setup Chrome remote desktop
+    - Build Android Virtal Device(ADV)
+    - Run Emulator on Cloud
+- Createing and publishing customised image
+    -  Creating an image
+    -  Publishing an image
 
-Alternativly, use the pre-built image if you wish to skip customization
-
-## Set up with pre-built image
+## Create VM with exsisting image
 - Before running the createVMwithImg file, remember to change the <VM_NAME>
 - If you chose to create one from image, skip the next section and go directly to [Running the build](https://github.com/Alwin-Lin/gcpSetup/blob/master/README.md#running-the-build-with-emulator
 ), everything will be set up
@@ -64,6 +69,9 @@ gcloud compute instances create <VM_NAME> \
    git config --global user.email "you@example.com" 
    ```
    - Downliad source
+   Note: This will sync the main by default, to check out a branch besides main, add -b <SOURCE_TAG> after the url.
+   
+   The list of tags can be found on [Source code tags and builds](https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds)
    ```
    mkdir -p $HOME/ws/android
    cd $HOME/ws/android
