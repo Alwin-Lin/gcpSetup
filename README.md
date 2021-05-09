@@ -73,6 +73,7 @@ Note:
    source build/envsetup.sh
    ```
    - Build target
+  
 Note: This process will take around 2~3 hours to finish
 
    ```
