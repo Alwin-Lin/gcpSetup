@@ -125,7 +125,7 @@ emulator
 
 ## Creating an image from VM
 
-Note: Shut down the VM for this step, if you can't, 
+Note: Shut down the VM for this step.
 
 ``` 
 gcloud compute images create <YOUR_IMAGE_NAME> \
