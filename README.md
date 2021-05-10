@@ -8,7 +8,8 @@
     -  Creating an image
     -  Publishing an image
 
-## Create VM with exsisting image
+## Android cloud build
+### Create VM with exsisting image
 - Before running the createVMwithImg file, remember to change the <VM_NAME>
 - If you chose to create one from image, skip the next section and go directly to [Running the build](https://github.com/Alwin-Lin/gcpSetup/blob/master/README.md#running-the-build-with-emulator
 ), everything will be set up
@@ -16,8 +17,39 @@
 Run createVMwithImg, or paste the following into cloud shell
 ``` 
 gcloud compute instances create <VM_NAME> \
-    --image-project gcpsample-311822 \
-    --image aosp-env
+    --image-project <PROJECT_NAME> \
+    --image acd-main
+```
+### Building Android
+   - Run setup script
+   ```
+   cd $HOME/ws/android
+   source build/envsetup.sh
+   ```
+   - Build target
+   ```
+   lunch <TARGET_VARIANT> \
+   
+   m -j
+   ```
+   Note: This process can take around 3~5 hours to finish depending on the computing power
+
+### Setting up remote desktop
+- install wget and chrome desktop for Debian
+    ``` 
+    sudo apt update \
+    sudo apt-get install --assume-yes wget \
+    wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb \
+    sudo dpkg --install chrome-remote-desktop_current_amd64.deb \
+    sudo apt install --assume-yes --fix-broken
+    ``` 
+- To start it
+    - Follow the instructions for [Configuring and starting the Chrome Remote Desktop service](https://cloud.google.com/architecture/chrome-desktop-remote-on-compute-engine#configuring_and_starting_the_chrome_remote_desktop_service)
+
+### Running the build with emulator
+The emulator was added in to your path by build process, to run: 
+``` 
+emulator
 ```
 
 ## Manualy create a Linux VM and build:
@@ -91,25 +123,19 @@ gcloud compute instances create <VM_NAME> \
    ```
    Note: This process can take around 3~5 hours to finish depending on the computing power
 
-## Running the build with emulator
-The emulator was added in to your path by build process, to run: 
-``` 
-emulator
+## Creating an image from VM
+
+Note: Shut down the VM for this step, if you can't, 
+
+``` gcloud compute images create <YOUR_IMAGE_NAME> \
+    --source-disk=<SOURCE_DISK> \
+    --source-disk-zone=<ZONE> \
+    --force
 ```
 
-## Setting up remote desktop on Windows 10
-- What does this do?
-    - Allows you to accsess cloud machine on your local machine
-- How much does it cost?
-    - Varies depending on the machine you use, visit the [Pricing Calculator](https://cloud.google.com/products/calculator#id=6bfdb97f-013e-480a-b02a-a9192be6ce09) for an estimate
-- How do I do it?
-    - install wget and chrome desktop for Debian
-    ``` 
-    sudo apt update \
-    sudo apt-get install --assume-yes wget \
-    wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb \
-    sudo dpkg --install chrome-remote-desktop_current_amd64.deb \
-    sudo apt install --assume-yes --fix-broken
-    ``` 
-- How do I start it?
-    - Follow the instructions for [Configuring and starting the Chrome Remote Desktop service](https://cloud.google.com/architecture/chrome-desktop-remote-on-compute-engine#configuring_and_starting_the_chrome_remote_desktop_service)
+## Sharing images publicly
+``` 
+gcloud compute images add-iam-policy-binding <YOUR_IMAGE_NAME> \
+    --member='allAuthenticatedUsers' \
+    --role='roles/compute.imageUser'
+```
