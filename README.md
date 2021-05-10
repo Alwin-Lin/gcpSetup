@@ -101,6 +101,7 @@ emulator
    git config --global user.email "you@example.com" 
    ```
    - Downliad source
+  
    Note: This will sync the main by default, to check out a branch besides main, add -b <SOURCE_TAG> after the url.
    
    The list of tags can be found on [Source code tags and builds](https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds)
