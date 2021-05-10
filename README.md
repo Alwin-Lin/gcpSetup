@@ -127,7 +127,8 @@ emulator
 
 Note: Shut down the VM for this step, if you can't, 
 
-``` gcloud compute images create <YOUR_IMAGE_NAME> \
+``` 
+gcloud compute images create <YOUR_IMAGE_NAME> \
     --source-disk=<SOURCE_DISK> \
     --source-disk-zone=<ZONE> \
     --force
