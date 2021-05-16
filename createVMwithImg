@@ -1,3 +1,4 @@
-gcloud compute instances create <VM_NAME> \
-    --image-project gcpsample-311822 \
-    --image aosp-env
+gcloud compute instances create <YOUR_VM_NAME> \
+    --image-project=<PROJECT_NAME> \
+    --image=acd-main
+    --machine-type=<MACHINE_TYPE>
