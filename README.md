@@ -25,6 +25,7 @@
 
 ## Cleanup
 - There are three ways to do so, [disable application](https://cloud.google.com/appengine/docs/standard/python3/building-app/cleaning-up#disabling_your_application), [disable billing](https://cloud.google.com/appengine/docs/standard/python3/building-app/cleaning-up#disabling_billing), or [deleteing project](https://cloud.google.com/appengine/docs/standard/python3/building-app/cleaning-up#deleting_your_project)
+
 # Codelab 2
 ## Android CS
 - [Download from Android source tree](https://source.android.com/setup/build/downloading)
@@ -46,6 +47,7 @@
    repo sync
    ```
 ## Build Process
+## Build a phone
 - Run setup script
 ```
 source build/envsetup.sh
@@ -58,8 +60,11 @@ source build/envsetup.sh
    
    m -j
    ```
-- Build a phone
-- Make it run
+
+## Make it run
+```
+emulator
+```
 # Codelab 3
 - Build target structure
 - Create your own 
