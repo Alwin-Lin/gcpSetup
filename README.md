@@ -1,3 +1,72 @@
+# Codelab 1
+## Create a VM
+  - 
+## Dev. Env Setup
+- [Setup environment](https://source.android.com/setup/build/initializing)
+   - For Ubuntu 18.04
+   ```
+   sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
+   ```
+- Python
+- repo
+- Java
+- libncurses
+## Chrome Remote
+- install wget and chrome desktop for Debian
+    ``` 
+    sudo apt update \
+    sudo apt-get install --assume-yes wget \
+    wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb \
+    sudo dpkg --install chrome-remote-desktop_current_amd64.deb \
+    sudo apt install --assume-yes --fix-broken
+    ``` 
+- To start it
+    - Follow the instructions for [Configuring and starting the Chrome Remote Desktop service](https://cloud.google.com/architecture/chrome-desktop-remote-on-compute-engine#configuring_and_starting_the_chrome_remote_desktop_service)
+
+## Cleanup
+- There are three ways to do so, [disable application](https://cloud.google.com/appengine/docs/standard/python3/building-app/cleaning-up#disabling_your_application), [disable billing](https://cloud.google.com/appengine/docs/standard/python3/building-app/cleaning-up#disabling_billing), or [deleteing project](https://cloud.google.com/appengine/docs/standard/python3/building-app/cleaning-up#deleting_your_project)
+# Codelab 2
+## Android CS
+- [Download from Android source tree](https://source.android.com/setup/build/downloading)
+
+   - Config Git enviroemnt
+   ``` 
+   git config --global user.name "Your Name"
+   git config --global user.email "you@example.com" 
+   ```
+   - Downliad source
+  
+   Note: This will sync the main by default, to check out a branch besides main, add -b <SOURCE_TAG> after the url.
+   
+   The list of tags can be found on [Source code tags and builds](https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds)
+   ```
+   mkdir -p $HOME/ws/android
+   cd $HOME/ws/android
+   repo init -u https://android.googlesource.com/platform/manifest
+   repo sync
+   ```
+## Build Process
+- Run setup script
+```
+source build/envsetup.sh
+```
+- Build target
+   - Use ``` lunch ``` with no additional arguments to check all avalible variants
+   Note: This process can take around 3~5 hours to finish depending on the computing power
+   ```
+   lunch <TARGET_VARIANT> \
+   
+   m -j
+   ```
+- Build a phone
+- Make it run
+# Codelab 3
+- Build target structure
+- Create your own 
+- Change boot animation
+- Make it run
+
+
 # Table of content 
  - Android cloud build
     - [Create VM with exsisting image](https://github.com/Alwin-Lin/gcpSetup/blob/master/README.md#create-vm-with-exsisting-image)
@@ -22,19 +91,6 @@ gcloud compute instances create <YOUR_VM_NAME> \
     --image=acd-main
     --machine-type=<MACHINE_TYPE>
 ```
-
-### Setting up remote desktop
-- install wget and chrome desktop for Debian
-    ``` 
-    sudo apt update \
-    sudo apt-get install --assume-yes wget \
-    wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb \
-    sudo dpkg --install chrome-remote-desktop_current_amd64.deb \
-    sudo apt install --assume-yes --fix-broken
-    ``` 
-- To start it
-    - Follow the instructions for [Configuring and starting the Chrome Remote Desktop service](https://cloud.google.com/architecture/chrome-desktop-remote-on-compute-engine#configuring_and_starting_the_chrome_remote_desktop_service)
-
 ### Building an android virtual device
 1. Launch browser inside your computer instace and go to [android studio download page](https://developer.android.com/studio)
 2. Download and install android studio
