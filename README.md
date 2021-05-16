@@ -4,10 +4,10 @@
     - [Setup Chrome remote desktop](https://github.com/Alwin-Lin/gcpSetup#setting-up-remote-desktop)
     - [Build Android Virtal Device(ADV)](https://github.com/Alwin-Lin/gcpSetup#building-an-android-virtual-device)
 - Createing and publishing customised image
-    - Creating the VM(https://github.com/Alwin-Lin/gcpSetup#creating-the-vm)
-    - Setting up build enviroment and build(https://github.com/Alwin-Lin/gcpSetup#setting-up-build-enviroment-and-build)
-    - Creating an image from vm(https://github.com/Alwin-Lin/gcpSetup#creating-an-image-from-vm)
-    - Sharing images to public(https://github.com/Alwin-Lin/gcpSetup#sharing-images-to-publicly)
+    - [Creating the VM](https://github.com/Alwin-Lin/gcpSetup#creating-the-vm)
+    - [Setting up build enviroment and build](https://github.com/Alwin-Lin/gcpSetup#setting-up-build-enviroment-and-build)
+    - [Creating an image from vm](https://github.com/Alwin-Lin/gcpSetup#creating-an-image-from-vm)
+    - [Sharing images to public](https://github.com/Alwin-Lin/gcpSetup#sharing-images-to-public)
 
 ## Android cloud build
 ### Create VM with exsisting image
