@@ -63,7 +63,7 @@ gcloud compute instances create <YOUR_VM_NAME> \
    ```
 2. Python, libncurses and repo
    - Install Python 2.7
-     - Note: Stick with 2.7 for now, using python 3 can cause problems down the road
+     - Note: Stick with 2.7 for now, using python 3 can cause problems when useing repo
    
    ```
    sudo apt-get install python
