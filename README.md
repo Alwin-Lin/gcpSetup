@@ -1,6 +1,6 @@
 # Table of content 
  - Android cloud build
-    - Create VM with exsisting image
+    - [Create VM with exsisting image](https://github.com/Alwin-Lin/gcpSetup/blob/master/README.md#create-vm-with-exsisting-image)
     - Setup Chrome remote desktop
     - Build Android Virtal Device(ADV)
     - Run Emulator on Cloud
@@ -21,19 +21,6 @@ gcloud compute instances create <YOUR_VM_NAME> \
     --image=acd-main
     --machine-type=<MACHINE_TYPE>
 ```
-### Building Android
-   - Run setup script
-   ```
-   cd $HOME/ws/android
-   source build/envsetup.sh
-   ```
-   - Build target
-   ```
-   lunch <TARGET_VARIANT> \
-   
-   m -j
-   ```
-   Note: This process can take around 3~5 hours to finish depending on the computing power
 
 ### Setting up remote desktop
 - install wget and chrome desktop for Debian
@@ -47,11 +34,10 @@ gcloud compute instances create <YOUR_VM_NAME> \
 - To start it
     - Follow the instructions for [Configuring and starting the Chrome Remote Desktop service](https://cloud.google.com/architecture/chrome-desktop-remote-on-compute-engine#configuring_and_starting_the_chrome_remote_desktop_service)
 
-### Running the build with emulator
-The emulator was added in to your path by build process, to run: 
-``` 
-emulator
-```
+### Building an android virtual device
+1. Launch browser inside your computer instace and go to [android studio download page](https://developer.android.com/studio)
+2. Download and install android studio
+3. Follow instructions over at [create and manage virtal devices](https://developer.android.com/studio/run/managing-avds#createavd)
 
 ## Creating your own image:
 ### Why?
