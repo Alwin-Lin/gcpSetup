@@ -47,11 +47,12 @@ gcloud compute instances create <YOUR_VM_NAME> \
 ### Creating the VM
 - Go to https://console.cloud.google.com/compute/instances
 - On the top, click on Create instance
-- Select N1 for series, and n1-standard-4 for machine type 
-- Scroll down to Boot Disk session and click on Change, change the disk size from 10 to at least 400 and hit select
-   - 250Gb for Android source, 150Gb to build
+- For series and machine type, pick the ones you prefer
+   - The image used in Android cloud build was built with n1 series standard-4 
+- Scroll down to Boot Disk and click Change, the disk size needs to be least 400
+   - [250Gb for Android source, 150Gb to build](https://source.android.com/setup/build/requirements#hardware-requirements)
 - At Firewall, check both boxes then hit Create.
-- To launch VM, click on SSH and it would pop up
+- To launch VM, click on SSH
 
 ### Setting up build enviroment and build
 
