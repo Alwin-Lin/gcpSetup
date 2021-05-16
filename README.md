@@ -10,13 +10,13 @@
 
 ## Android cloud build
 ### Create VM with exsisting image
-- Before running the createVMwithImg file, remember to change the <VM_NAME>
+- Before running the createVMwithImg file, remember to change the <YOUR_VM_NAME>
 - If you chose to create one from image, skip the next section and go directly to [Running the build](https://github.com/Alwin-Lin/gcpSetup/blob/master/README.md#running-the-build-with-emulator
 ), everything will be set up
 
 Run createVMwithImg, or paste the following into cloud shell
 ``` 
-gcloud compute instances create <VM_NAME> \
+gcloud compute instances create <YOUR_VM_NAME> \
     --image-project <PROJECT_NAME> \
     --image acd-main
 ```
