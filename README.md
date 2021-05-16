@@ -1,12 +1,13 @@
 # Table of content 
  - Android cloud build
     - [Create VM with exsisting image](https://github.com/Alwin-Lin/gcpSetup/blob/master/README.md#create-vm-with-exsisting-image)
-    - Setup Chrome remote desktop
-    - Build Android Virtal Device(ADV)
-    - Run Emulator on Cloud
+    - [Setup Chrome remote desktop](https://github.com/Alwin-Lin/gcpSetup#setting-up-remote-desktop)
+    - [Build Android Virtal Device(ADV)](https://github.com/Alwin-Lin/gcpSetup#building-an-android-virtual-device)
 - Createing and publishing customised image
-    -  Creating an image
-    -  Publishing an image
+    - Creating the VM
+    - Setting up build enviroment and build 
+    - Creating an image
+    - Publishing an image
 
 ## Android cloud build
 ### Create VM with exsisting image
@@ -52,7 +53,7 @@ gcloud compute instances create <YOUR_VM_NAME> \
 - At Firewall, check both boxes then hit Create.
 - To launch VM, click on SSH and it would pop up
 
-### Setting up build enviroment and downloading source
+### Setting up build enviroment and build
 
 1. [Setup environment](https://source.android.com/setup/build/initializing)
    - For Ubuntu 18.04
