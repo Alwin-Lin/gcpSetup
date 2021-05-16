@@ -17,8 +17,9 @@
 Run createVMwithImg, or paste the following into cloud shell
 ``` 
 gcloud compute instances create <YOUR_VM_NAME> \
-    --image-project <PROJECT_NAME> \
-    --image acd-main
+    --image-project=<PROJECT_NAME> \
+    --image=acd-main
+    --machine-type=<MACHINE_TYPE>
 ```
 ### Building Android
    - Run setup script
@@ -52,7 +53,10 @@ The emulator was added in to your path by build process, to run:
 emulator
 ```
 
-## Manualy create a Linux VM and build:
+## Creating your own image:
+### Why?
+- Saves time, no more waiting for android to build, and no more setting up enviroment
+- Prevents error caused by different computational settings and makes sure everyone is on the same page
 ### Creating the VM
 - Go to https://console.cloud.google.com/compute/instances
 - On the top, click on Create instance
@@ -71,6 +75,7 @@ emulator
    ```
 2. Python, libncurses and repo
    - Install Python 2.7
+     - Note: Stick with 2.7 for now, using python 3 can cause problems down the road
    
    ```
    sudo apt-get install python
@@ -117,14 +122,21 @@ emulator
    source build/envsetup.sh
    ```
    - Build target
+     - Use ``` lunch ``` with no additional arguments to check all avalible variants
    ```
    lunch <TARGET_VARIANT> \
    
    m -j
    ```
    Note: This process can take around 3~5 hours to finish depending on the computing power
+5. Run emulator
+```
+emulator
+```
+6. Common errors
+- View [troubleshooting common error](https://source.android.com/setup/build/building#troubleshooting-common-build-errors) page for more
 
-## Creating an image from VM
+### Creating an image from VM
 
 Note: Shut down the VM for this step.
 
@@ -135,7 +147,7 @@ gcloud compute images create <YOUR_IMAGE_NAME> \
     --force
 ```
 
-## Sharing images publicly
+### Sharing images publicly
 ``` 
 gcloud compute images add-iam-policy-binding <YOUR_IMAGE_NAME> \
     --member='allAuthenticatedUsers' \
