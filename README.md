@@ -22,9 +22,9 @@ Paste the following comand into Cloud Shell
     - Everything beond this point will be executed in the window that poped up
 -  [Setup environment](https://source.android.com/setup/build/initializing)
 
-   ```
-    sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
-   ```
+```
+sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
+```
 - Install Python, repo, Java and libncurses
 ``` 
   sudo apt-get install python
@@ -36,13 +36,13 @@ Paste the following comand into Cloud Shell
 ## Chrome Remote
 - install wget and chrome desktop for Debian
   
-  ``` 
-    sudo apt update \
-    sudo apt-get install --assume-yes wget \
-    wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb \
-    sudo dpkg --install chrome-remote-desktop_current_amd64.deb \
-    sudo apt install --assume-yes --fix-broken
-  ``` 
+``` 
+sudo apt update \
+sudo apt-get install --assume-yes wget \
+wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb \
+sudo dpkg --install chrome-remote-desktop_current_amd64.deb \
+sudo apt install --assume-yes --fix-broken
+``` 
 - Follow the instructions for [Configuring and starting the Chrome Remote Desktop service](https://cloud.google.com/architecture/chrome-desktop-remote-on-compute-engine#configuring_and_starting_the_chrome_remote_desktop_service)
 
 ## Cleanup
