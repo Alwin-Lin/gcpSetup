@@ -11,6 +11,7 @@ You can use an exsisting project if it fits better. In this example, we will cre
     - Follow [Starting a new session](https://cloud.google.com/shell/docs/using-cloud-shell#starting_a_new_session) to launch Cloud Shell
 ## 2. Create a VM
 Paste the following comand into Cloud Shell
+
     ``` 
     gcloud compute instances create asd-codelab1-vm \
         --image-project=gcpsample-311822 \
@@ -22,26 +23,28 @@ Paste the following comand into Cloud Shell
 - Go to [VM instances](https://console.cloud.google.com/compute/instances) and click on **SSH**
     - Everything beond this point will be executed in the window that poped up
 -  [Setup environment](https://source.android.com/setup/build/initializing)
+
    ```
     sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
    ```
 - Install Python, repo, Java and libncurses
-  ``` 
+``` 
   sudo apt-get install python
   sudo apt-get install libncurses5
   sudo apt-get install repo
   sudo apt update
   sudo apt install default-jre
-  ```
+```
 ## Chrome Remote
 - install wget and chrome desktop for Debian
-    ``` 
+  
+  ``` 
     sudo apt update \
     sudo apt-get install --assume-yes wget \
     wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb \
     sudo dpkg --install chrome-remote-desktop_current_amd64.deb \
     sudo apt install --assume-yes --fix-broken
-    ``` 
+  ``` 
 - Follow the instructions for [Configuring and starting the Chrome Remote Desktop service](https://cloud.google.com/architecture/chrome-desktop-remote-on-compute-engine#configuring_and_starting_the_chrome_remote_desktop_service)
 
 ## Cleanup
