@@ -1,26 +1,29 @@
-# Codelab 1
-In this codelab, you will learn how to create a virtal machine on google cloud platform and accsess it with remote desktop
-## Pre-requisits
-- A google cloud platform project
-    - Go to the [Manage resource page](https://accounts.google.com/signin/v2/identifier?service=cloudconsole&passive=1209600&osid=1&continue=https%3A%2F%2Fconsole.cloud.google.com%2Fcloud-resource-manager%3F_ga%3D2.132509006.1986286730.1621184494-1324707579.1618768558%26_gac%3D1.149621444.1620607945.CjwKCAjwkN6EBhBNEiwADVfya_MJ7cZ3Lqqdw04lphpgcNceqdJlG_pW005Iiy9EUhf3FCCddoM7QBoCxWkQAvD_BwE&followup=https%3A%2F%2Fconsole.cloud.google.com%2Fcloud-resource-manager%3F_ga%3D2.132509006.1986286730.1621184494-1324707579.1618768558%26_gac%3D1.149621444.1620607945.CjwKCAjwkN6EBhBNEiwADVfya_MJ7cZ3Lqqdw04lphpgcNceqdJlG_pW005Iiy9EUhf3FCCddoM7QBoCxWkQAvD_BwE&flowName=GlifWebSignIn&flowEntry=ServiceLogin) and click create project
-    - Enter the details and click create
-- [Enabel billing](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
-- Launch cloud shell and check project
-    - If the project name displayed on the top left does not match the one you created, click on it to chance
-    - Launch cloud shell by clicking on the cloud shell icon next to help
-## Create a VM
-Activate cloud shell, paste the following inside: 
+# Set Up A System Development Environment on The Cloud
+In this code lab, you will learn how to create a virtal machine on Google Cloud Platform(GCP) and accsess it by Chrome Remote Desktop(CRD) for system development.
+## 1. Create a new GCP project
+You can use an exsisting project if it fits better. In this example, we will create a new project: **ASD Codelab1**
+1. Follow the instructions for [Creating a project](https://cloud.google.com/resource-manager/docs/creating-managing-projects#creating_a_project)
+    - Project name: **ASD Codelab1**
+    - Project ID: **asd-codelab1**
+        - Make sure to click **Edit** in order to change the project id, since it can not be changed later
+2. Make sure to [Enabel billing](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project).
+3. Use Cloud Shell to verify the project exsist
+    - Follow [Starting a new session](https://cloud.google.com/shell/docs/using-cloud-shell#starting_a_new_session) to launch Cloud Shell
+## 2. Create a VM
+Paste the following comand into Cloud Shell
     ``` 
-    gcloud compute instances create <YOUR_VM_NAME> \
+    gcloud compute instances create asd-codelab1-vm \
         --image-project=gcpsample-311822 \
-        --image=aosp-env
-        --machine-type=n1-custom-4-450000
+        --image=aosp-env \
+        --custom-extensions --custom-cpu=4 --custom-memory=450 \
+        --zone=us-west1-b
     ```
-## Dev. Env Setup
-- [Setup environment](https://source.android.com/setup/build/initializing)
-   - For Ubuntu 18.04
+## 3. Dev. Env Setup
+- Go to [VM instances](https://console.cloud.google.com/compute/instances) and click on **SSH**
+    - Everything beond this point will be executed in the window that poped up
+-  [Setup environment](https://source.android.com/setup/build/initializing)
    ```
-  sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
+    sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
    ```
 - Install Python, repo, Java and libncurses
   ``` 
@@ -39,18 +42,20 @@ Activate cloud shell, paste the following inside:
     sudo dpkg --install chrome-remote-desktop_current_amd64.deb \
     sudo apt install --assume-yes --fix-broken
     ``` 
-- To start it
-    - Follow the instructions for [Configuring and starting the Chrome Remote Desktop service](https://cloud.google.com/architecture/chrome-desktop-remote-on-compute-engine#configuring_and_starting_the_chrome_remote_desktop_service)
+- Follow the instructions for [Configuring and starting the Chrome Remote Desktop service](https://cloud.google.com/architecture/chrome-desktop-remote-on-compute-engine#configuring_and_starting_the_chrome_remote_desktop_service)
 
 ## Cleanup
 - There are three ways to do so, [disable application](https://cloud.google.com/appengine/docs/standard/python3/building-app/cleaning-up#disabling_your_application), [disable billing](https://cloud.google.com/appengine/docs/standard/python3/building-app/cleaning-up#disabling_billing), or [deleteing project](https://cloud.google.com/appengine/docs/standard/python3/building-app/cleaning-up#deleting_your_project)
 
-# Codelab 2
+# Build An Android Virtual Device On The Cloud
 ## Android CS
+
+In the vm console: 
+
 1. Config Git enviroemnt
  ``` 
- git config --global user.name "Your Name"
- git config --global user.email "you@example.com" 
+ git config --global user.name <YOUR_NAME>
+ git config --global user.email <YOUR_EMAIL@EXAMPLE.com> 
  ```
  2. Downliad source
  
@@ -82,13 +87,6 @@ source build/envsetup.sh
 ```
 emulator
 ```
-# Codelab 3
-- Build target structure
-- Create your own 
-- Change boot animation
-- Make it run
-
-
 # Table of content 
  - Android cloud build
     - [Create VM with exsisting image](https://github.com/Alwin-Lin/gcpSetup/blob/master/README.md#create-vm-with-exsisting-image)
