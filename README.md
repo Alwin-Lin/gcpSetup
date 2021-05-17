@@ -1,12 +1,21 @@
 # Codelab 1
+In this codelab, you will learn how to create a virtal machine on google cloud platform and accsess it with remote desktop
+## Pre-requisits
+- A google cloud platform project
+    - Go to the [Manage resource page](https://accounts.google.com/signin/v2/identifier?service=cloudconsole&passive=1209600&osid=1&continue=https%3A%2F%2Fconsole.cloud.google.com%2Fcloud-resource-manager%3F_ga%3D2.132509006.1986286730.1621184494-1324707579.1618768558%26_gac%3D1.149621444.1620607945.CjwKCAjwkN6EBhBNEiwADVfya_MJ7cZ3Lqqdw04lphpgcNceqdJlG_pW005Iiy9EUhf3FCCddoM7QBoCxWkQAvD_BwE&followup=https%3A%2F%2Fconsole.cloud.google.com%2Fcloud-resource-manager%3F_ga%3D2.132509006.1986286730.1621184494-1324707579.1618768558%26_gac%3D1.149621444.1620607945.CjwKCAjwkN6EBhBNEiwADVfya_MJ7cZ3Lqqdw04lphpgcNceqdJlG_pW005Iiy9EUhf3FCCddoM7QBoCxWkQAvD_BwE&flowName=GlifWebSignIn&flowEntry=ServiceLogin) and click create project
+    - Enter the details and click create
+- [Enabel billing](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
+- Launch cloud shell and check project
+    - If the project name displayed on the top left does not match the one you created, click on it to chance
+    - Launch cloud shell by clicking on the cloud shell icon next to help
 ## Create a VM
-This will setup a vm with image acd-main
-``` 
-gcloud compute instances create <YOUR_VM_NAME> \
-    --image-project=<PROJECT_NAME> \
-    --image=acd-main
-    --machine-type=<MACHINE_TYPE>
-```
+Activate cloud shell, paste the following inside: 
+    ``` 
+    gcloud compute instances create <YOUR_VM_NAME> \
+        --image-project=gcpsample-311822 \
+        --image=aosp-env
+        --machine-type=n1-custom-4-450000
+    ```
 ## Dev. Env Setup
 - [Setup environment](https://source.android.com/setup/build/initializing)
    - For Ubuntu 18.04
