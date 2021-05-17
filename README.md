@@ -1,6 +1,12 @@
 # Codelab 1
 ## Create a VM
-  - 
+This will setup a vm with image acd-main
+``` 
+gcloud compute instances create <YOUR_VM_NAME> \
+    --image-project=<PROJECT_NAME> \
+    --image=acd-main
+    --machine-type=<MACHINE_TYPE>
+```
 ## Dev. Env Setup
 - [Setup environment](https://source.android.com/setup/build/initializing)
    - For Ubuntu 18.04
