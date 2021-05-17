@@ -7,14 +7,14 @@
    ```
   sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
    ```
-- Python, repo, Java and libncurses
-``` 
-sudo apt-get install python
-sudo apt-get install libncurses5
-sudo apt-get install repo
-sudo apt update
-sudo apt install default-jre
-```
+- Install Python, repo, Java and libncurses
+  ``` 
+  sudo apt-get install python
+  sudo apt-get install libncurses5
+  sudo apt-get install repo
+  sudo apt update
+  sudo apt install default-jre
+  ```
 ## Chrome Remote
 - install wget and chrome desktop for Debian
     ``` 
@@ -32,31 +32,28 @@ sudo apt install default-jre
 
 # Codelab 2
 ## Android CS
-- [Download from Android source tree](https://source.android.com/setup/build/downloading)
-
-   - Config Git enviroemnt
-   ``` 
-   git config --global user.name "Your Name"
-   git config --global user.email "you@example.com" 
-   ```
-   - Downliad source
-  
-   Note: This will sync the main by default, to check out a branch besides main, add -b <SOURCE_TAG> after the url.
-   
-   The list of tags can be found on [Source code tags and builds](https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds)
-   ```
-   mkdir -p $HOME/ws/android
-   cd $HOME/ws/android
-   repo init -u https://android.googlesource.com/platform/manifest
-   repo sync
-   ```
+1. Config Git enviroemnt
+ ``` 
+ git config --global user.name "Your Name"
+ git config --global user.email "you@example.com" 
+ ```
+ 2. Downliad source
+ 
+ Note: This will sync the main by default, to check out a branch besides main, add -b <SOURCE_TAG> after the url.
+ 
+ The list of tags can be found on [Source code tags and builds](https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds)
+ ```
+ mkdir -p $HOME/ws/android
+ cd $HOME/ws/android
+ repo init -u https://android.googlesource.com/platform/manifest
+ repo sync
+ ```
 ## Build Process
-## Build a phone
-- Run setup script
+1. Run setup script
 ```
 source build/envsetup.sh
 ```
-- Build target
+2. Build target
    - Use ``` lunch ``` with no additional arguments to check all avalible variants
    Note: This process can take around 3~5 hours to finish depending on the computing power
    ```
@@ -64,6 +61,7 @@ source build/envsetup.sh
    
    m -j
    ```
+## Build a phone
 
 ## Make it run
 ```
