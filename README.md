@@ -12,13 +12,11 @@ You can use an exsisting project if it fits better. In this example, we will cre
 ## 2. Create a VM
 Paste the following comand into Cloud Shell
 
-    ``` 
     gcloud compute instances create asd-codelab1-vm \
         --image-project=gcpsample-311822 \
         --image=aosp-env \
         --custom-extensions --custom-cpu=4 --custom-memory=450 \
         --zone=us-west1-b
-    ```
 ## 3. Dev. Env Setup
 - Go to [VM instances](https://console.cloud.google.com/compute/instances) and click on **SSH**
     - Everything beond this point will be executed in the window that poped up
