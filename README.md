@@ -1,19 +1,13 @@
 # Build An Android Virtual Device On The Cloud
 Downloading and building android will take around 3~5 hours total, due to the time limit, the following part up untill [Make it run](https://github.com/Alwin-Lin/gcpSetup/blob/master/README.md#make-it-run)
-is only for demonstration
+is only for demonstration. 
+
 ## Android CS
 
 In the vm console: 
 
-1. Config Git enviroemnt
- ``` 
- git config --global user.name <YOUR_NAME>
- git config --global user.email <YOUR_EMAIL@EXAMPLE.com> 
- ```
- 2. Downliad source
- 
- Note: This will sync the main by default, to check out a branch besides main, add -b <SOURCE_TAG> after the url.
- 
+ 1. Downliad source
+  
  The list of tags can be found on [Source code tags and builds](https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds)
  ```
  mkdir -p $HOME/ws/android
@@ -23,21 +17,25 @@ In the vm console:
  ```
 ## Build Process
 1. Run setup script
+- The envsetup.sh will initilize the enviroment
 ```
 source build/envsetup.sh
 ```
-2. Build target
-Note: This process can take around 3~5 hours to finish depending on the computing power
-   - Use ``` lunch ``` with no additional arguments to check all avalible variants
+2. Build target   
    ```
-   lunch <TARGET_VARIANT> \
-   
-   m -j
+   lunch <TARGET_VARIANT>
    ```
 ## Build a phone
-- 
+- After comfirming the build variant, we can use the make command to build Android.
+  - This process can take around 3~5 hours to finish depending on the computing power
+   ```
+   m -j
+   ```
 
 ## Make it run
+There are two ways of running the build, by [Emulating an Android device](https://source.android.com/setup/build/building#emulate-an-android-device) or [Flashing a device](https://source.android.com/setup/build/running#flashing-a-device)
+
+Here we will run with the emulator
 ```
 emulator
 ```
