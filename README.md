@@ -1,8 +1,6 @@
 # Table of content 
  - Android cloud build
     - [Create VM with exsisting image](https://github.com/Alwin-Lin/gcpSetup/blob/master/README.md#create-vm-with-exsisting-image)
-    - [Setup Chrome remote desktop](https://github.com/Alwin-Lin/gcpSetup#setting-up-remote-desktop)
-    - [Build Android Virtal Device(ADV)](https://github.com/Alwin-Lin/gcpSetup#building-an-android-virtual-device)
 - Createing and publishing customised image
     - [Creating the VM](https://github.com/Alwin-Lin/gcpSetup#creating-the-vm)
     - [Setting up build enviroment and build](https://github.com/Alwin-Lin/gcpSetup#setting-up-build-enviroment-and-build)
@@ -78,13 +76,13 @@ gcloud compute instances create <YOUR_VM_NAME> \
    ```
    - Downliad source
   
-   Note: This will sync the main by default, to check out a branch besides main, add -b <SOURCE_TAG> after the url.
+   Note: If you want to sync the main branch, remove -b <SOURCE_TAG> from the command.
    
    The list of tags can be found on [Source code tags and builds](https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds)
    ```
    mkdir -p $HOME/ws/android
    cd $HOME/ws/android
-   repo init -u https://android.googlesource.com/platform/manifest
+   repo init -u https://android.googlesource.com/platform/manifest -b <SOURCE_TAG>
    repo sync
    ```
 4. Building Android
@@ -94,10 +92,11 @@ gcloud compute instances create <YOUR_VM_NAME> \
    ```
    - Build target
      - Use ``` lunch ``` with no additional arguments to check all avalible variants
+     - You can speed up the build process by adding additional threads, that however is limited by computing engine 
    ```
    lunch <TARGET_VARIANT> \
    
-   m -j
+   m -j<THREAD_COUNT>
    ```
    Note: This process can take around 3~5 hours to finish depending on the computing power
 5. Run emulator
