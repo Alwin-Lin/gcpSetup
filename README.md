@@ -1,4 +1,6 @@
 # Build An Android Virtual Device On The Cloud
+Downloading and building android will take around 3~5 hours total, due to the time limit, the following part up untill ##Make it run
+is only for demonstration
 ## Android CS
 
 In the vm console: 
@@ -25,14 +27,15 @@ In the vm console:
 source build/envsetup.sh
 ```
 2. Build target
+Note: This process can take around 3~5 hours to finish depending on the computing power
    - Use ``` lunch ``` with no additional arguments to check all avalible variants
-   Note: This process can take around 3~5 hours to finish depending on the computing power
    ```
    lunch <TARGET_VARIANT> \
    
    m -j
    ```
 ## Build a phone
+- 
 
 ## Make it run
 ```
