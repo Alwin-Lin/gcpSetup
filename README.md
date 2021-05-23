@@ -1,5 +1,5 @@
 # Build An Android Virtual Device On The Cloud
-Downloading and building android will take around 3~5 hours total, due to the time limit, the following part up untill ##Make it run
+Downloading and building android will take around 3~5 hours total, due to the time limit, the following part up untill [Make it run](https://github.com/Alwin-Lin/gcpSetup/blob/master/README.md#make-it-run)
 is only for demonstration
 ## Android CS
 
