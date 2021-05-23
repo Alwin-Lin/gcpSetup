@@ -1,14 +1,11 @@
 # Build An Android Virtual Device On The Cloud
-Downloading and building android will take around 3~5 hours total, due to the time limit, the following part up untill [Make it run](https://github.com/Alwin-Lin/gcpSetup/blob/master/README.md#make-it-run)
-is only for demonstration. 
+In this clode lab, you will learn how to get the Android source code, build it, and run the built product on GCP. 
+
+However, downloading and building android will take around 4~6 hours total, due to the time limit, the following part up untill [Make it run](https://github.com/Alwin-Lin/gcpSetup/blob/master/README.md#make-it-run)
+is only for demonstration.
 
 ## Android CS
-
-In the vm console: 
-
- 1. Downliad source
-  
- The list of tags can be found on [Source code tags and builds](https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds)
+ - Downliad source with repo
  ```
  mkdir -p $HOME/ws/android
  cd $HOME/ws/android
@@ -17,17 +14,14 @@ In the vm console:
  ```
 ## Build Process
 1. Run setup script
-- The envsetup.sh will initilize the enviroment
-```
-source build/envsetup.sh
-```
+  ```
+  source build/envsetup.sh
+  ```
 2. Build target   
-   ```
-   lunch <TARGET_VARIANT>
-   ```
+  ```
+  lunch 16
+  ```
 ## Build a phone
-- After comfirming the build variant, we can use the make command to build Android.
-  - This process can take around 3~5 hours to finish depending on the computing power
    ```
    m -j
    ```
