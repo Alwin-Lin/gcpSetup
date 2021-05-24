@@ -15,7 +15,7 @@
 ``` 
 gcloud compute instances create <YOUR_VM_NAME> \
     --image-project=<PROJECT_NAME_OF_THE_IMAGE> \
-    --image=<IMAGE_NAME>
+    --image=<IMAGE_NAME> \
     --machine-type=<MACHINE_TYPE>
 ```
 - What are the [Machine types](https://cloud.google.com/compute/docs/machine-types)? 
