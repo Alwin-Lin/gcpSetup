@@ -78,7 +78,7 @@ gcloud compute instances create <YOUR_VM_NAME> \
   
    Note: If you want to sync the main branch, remove -b <SOURCE_TAG> from the command.
    
-   The list of tags can be found on [Source code tags and builds](https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds)
+   The list of tags can be found on [Source code tags and builds](https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds), as well as [Branches](https://android.googlesource.com/platform/manifest/+refs)
    ```
    mkdir -p $HOME/ws/android
    cd $HOME/ws/android
