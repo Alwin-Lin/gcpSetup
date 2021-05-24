@@ -54,18 +54,18 @@ gcloud compute instances create <YOUR_VM_NAME> \
    ``` 
    sudo apt-get install libncurses5
    ```
-   - Install repo
-
-   ```
-   sudo apt-get install repo
-   ```
-   
+   - [Install repo](https://source.android.com/setup/develop#installing-repo)
+  ```
+  mkdir ~/bin
+  PATH=~/bin:$PATH
+  curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+  chmod a+x ~/bin/repo
+  ```
    -  Install Java 
    ```
    sudo apt update
    sudo apt install default-jre
    ```
-
 
 3. [Download from Android source tree](https://source.android.com/setup/build/downloading)
 
@@ -83,7 +83,7 @@ gcloud compute instances create <YOUR_VM_NAME> \
    mkdir -p $HOME/ws/android
    cd $HOME/ws/android
    repo init -u https://android.googlesource.com/platform/manifest -b <SOURCE_TAG>
-   repo sync
+   repo sync -c -j<THREAD_COUNT>
    ```
 4. Building Android
    - Run setup script
