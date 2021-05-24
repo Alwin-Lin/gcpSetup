@@ -10,17 +10,16 @@
 ## Android cloud build
 ### Create VM with exsisting image
 - Before running the createVMwithImg file, remember to change the <YOUR_VM_NAME>
-- If you chose to create one from image, skip the next section and go directly to [Running the build](https://github.com/Alwin-Lin/gcpSetup/blob/master/README.md#running-the-build-with-emulator
-), everything will be set up
+- If you are using the VM for building Android, it needs at least 400 GB, [250Gb for Android source, 150Gb to build](https://source.android.com/setup/build/requirements#hardware-requirements)
 
-Run createVMwithImg, or paste the following into cloud shell
 ``` 
 gcloud compute instances create <YOUR_VM_NAME> \
-    --image-project=<PROJECT_NAME> \
-    --image=acd-main
+    --image-project=<PROJECT_NAME_OF_THE_IMAGE> \
+    --image=<IMAGE_NAME>
     --machine-type=<MACHINE_TYPE>
 ```
-
+- What are the [Machine types](https://cloud.google.com/compute/docs/machine-types)? 
+- How do I [Create a VM instance with a custom machine type](https://cloud.google.com/compute/docs/instances/creating-instance-with-custom-machine-type#create)?
 ## Creating your own image:
 ### Why?
 - Saves time, no more waiting for android to build, and no more setting up enviroment
