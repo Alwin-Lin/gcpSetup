@@ -70,8 +70,8 @@ gcloud compute instances create <YOUR_VM_NAME> \
 
    - Config Git enviroemnt
    ``` 
-   git config --global user.name "Your Name"
-   git config --global user.email "you@example.com" 
+   git config --global user.name <YOUR_NAME>
+   git config --global user.email <YOUR@EMAIL.COM> 
    ```
    - Downliad source
   
@@ -90,14 +90,13 @@ gcloud compute instances create <YOUR_VM_NAME> \
    source build/envsetup.sh
    ```
    - Build target
-     - Use ``` lunch ``` with no additional arguments to check all avalible variants
+     - Use ``` lunch ``` with no additional arguments to check all avalible variants.
+     - This process can take around 3~5 hours to finish depending on the computing power
      - You can speed up the build process by adding additional threads, that however is limited by computing engine 
    ```
-   lunch <TARGET_VARIANT> \
-   
+   lunch <TARGET_VARIANT> \ 
    m -j<THREAD_COUNT>
    ```
-   Note: This process can take around 3~5 hours to finish depending on the computing power
 5. Run emulator
 ```
 emulator
